@@ -4,22 +4,24 @@ const studentsData = [
     name: "John Doe",
     phoneNumber: "1234567890",
     branch: "Computer Science",
-    attendance: 85,
-    cgpa: [8.5, 8.0, 7.9],
-    softSkills: ["Teamwork", "Communication"],
-    remarks: "Excellent performance in projects.",
-    academicHistory: {
-      grades: [80, 85, 90],
-      attendance: [90, 85, 88],
-    },
-    extracurricularActivities: [
-      { name: "Basketball", participation: 2 },
-      { name: "Debate Club", participation: 1 },
+    attendance: [90, 85, 88, 92], // Attendance over semesters
+    cgpa: [8.5, 8.0, 8.3, 8.7], // CGPA over semesters
+    feesPaid: [50000, 50000, 50000, 50000], // Fees paid over semesters
+    softSkills: [
+      { skill: "Data Structures", rating: 4 },
+      { skill: "Web Development", rating: 5 },
+      { skill: "Aptitude", rating: 4 },
     ],
-    performanceMetrics: {
-      projectsCompleted: 5,
-      competitionsParticipated: 3,
-      skillAssessments: [4, 5, 3],
+    codingPlatformRatings: {
+      CodeChef: 4,
+      LeetCode: 5,
+      Codeforces: 4,
+      HackerRank: 3,
+    }, // Ratings on coding platforms
+    extracurricularActivities: {
+      Games: 4,
+      Library: 3,
+      eventparticipation: 1,
     },
   },
   {
@@ -27,22 +29,23 @@ const studentsData = [
     name: "Jane Smith",
     phoneNumber: "9876543210",
     branch: "Information Technology",
-    attendance: 90,
-    cgpa: [9.0, 8.8, 8.7],
-    softSkills: ["Leadership", "Critical Thinking"],
-    remarks: "Great problem-solving skills.",
-    academicHistory: {
-      grades: [90, 92, 95],
-      attendance: [95, 92, 93],
-    },
-    extracurricularActivities: [
-      { name: "Science Club", participation: 3 },
-      { name: "Football", participation: 2 },
+    attendance: [95, 92, 93, 90],
+    cgpa: [9.0, 8.8, 8.7, 9.2],
+    feesPaid: [50000, 50000, 50000, 50000],
+    softSkills: [
+      { skill: "Leadership", rating: 5 },
+      { skill: "Critical Thinking", rating: 4 },
     ],
-    performanceMetrics: {
-      projectsCompleted: 8,
-      competitionsParticipated: 4,
-      skillAssessments: [5, 5, 4],
+    codingPlatformRatings: {
+      CodeChef: 5,
+      LeetCode: 4,
+      Codeforces: 4,
+      HackerRank: 5,
+    },
+    extracurricularActivities: {
+      Games: 4,
+      Library: 3,
+      eventparticipation: 1,
     },
   },
   // Add more student objects as needed

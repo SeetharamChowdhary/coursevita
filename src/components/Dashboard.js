@@ -1,4 +1,3 @@
-// src/components/Dashboard.js
 import React, { useState } from "react";
 import {
   Container,
@@ -8,15 +7,15 @@ import {
   Typography,
   Paper,
 } from "@mui/material";
-import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom"; // Ensure you import this if you plan to use it
 import studentsData from "../data/mockdata";
-import { Bar } from "react-chartjs-2";
+import StudentCharts from "./StudentCharts"; // Import StudentCharts component
 import Navbar from "./Navbar"; // Import the Navbar
 
 const Dashboard = () => {
   const [studentId, setStudentId] = useState("");
   const [student, setStudent] = useState(null);
-  const navigate = useNavigate(); // Use navigate for redirecting
+  const navigate = useNavigate(); // Use navigate for redirecting if necessary
 
   // Handle fetching student data based on ID
   const handleFetchStudent = () => {
@@ -39,6 +38,7 @@ const Dashboard = () => {
           value={studentId}
           onChange={(e) => setStudentId(e.target.value)}
         />
+
         <Button
           variant="contained"
           color="primary"
@@ -47,6 +47,7 @@ const Dashboard = () => {
         >
           Fetch Student Data
         </Button>
+        <p>Ex : 1001</p>
 
         {/* Student Details */}
         {student && (
@@ -59,41 +60,8 @@ const Dashboard = () => {
             <Typography>Branch: {student.branch}</Typography>
             <Typography>Attendance: {student.attendance}%</Typography>
 
-            {/* CGPA Chart */}
-            <Typography variant="h6" gutterBottom sx={{ mt: 2 }}>
-              CGPA Over Semesters
-            </Typography>
-            <Bar
-              data={{
-                labels: ["Semester 1", "Semester 2", "Semester 3"],
-                datasets: [
-                  {
-                    label: "CGPA",
-                    data: student.cgpa,
-                    backgroundColor: "rgba(75, 192, 192, 0.6)",
-                  },
-                ],
-              }}
-              options={{
-                responsive: true,
-                plugins: {
-                  legend: {
-                    display: true,
-                  },
-                  title: {
-                    display: true,
-                    text: "CGPA Progress",
-                  },
-                },
-              }}
-            />
-
-            {/* Soft Skills */}
-            <Typography variant="h6" gutterBottom sx={{ mt: 2 }}>
-              Soft Skills
-            </Typography>
-            <Typography>{student.softSkills.join(", ")}</Typography>
-            <Typography>Remarks: {student.remarks}</Typography>
+            {/* Render StudentCharts component */}
+            <StudentCharts student={student} />
           </Paper>
         )}
       </Container>
